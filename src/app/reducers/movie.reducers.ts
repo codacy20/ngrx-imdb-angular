@@ -21,7 +21,11 @@ export function movieReducer(state: Movie[] = initialState, action: MovieActions
         case MovieActions.ADD_MOVIE:
             return [...state, action.payload];
         case MovieActions.REMOVE_MOVIE:
-            return [...state, action.payload];
+            return state.filter((item) => {
+                if (item.name !== state[action.payload].name) {
+                    return item;
+                }
+            });
         default:
             return state;
     }

@@ -21,8 +21,8 @@ export class AppComponent {
     this.store.dispatch(new MovieActions.AddMovie({ name, director, url }));
   }
 
-  remove() {
-
+  remove(index: number) {
+    this.store.dispatch(new MovieActions.RemoveMovie(index));
   }
 
 }

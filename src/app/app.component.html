@@ -5,22 +5,32 @@
 <div id="projectFacts" class="sectionClass">
   <div class="fullWidth eight columns">
     <div class="projectFactsWrap">
-      <div class="item wow fadeInUpBig animated animated" data-number="12" style="visibility: visible;">
-        <p id="number1" class="number">add a new movie</p>
-        <span></span>
-        <p></p>
-        <input type="text" name="name" id="name" #name placeholder="name" autocomplete="off">
-        <input type="text" name="director" id="director" #director placeholder="director" autocomplete="off">
-        <input type="url" name="url" id="url" #url placeholder="url" autocomplete="off">
-        <div class="plus" (click)="add(name.value,director.value,url.value)">add</div>
+      <div class="item wow fadeInUpBig animated animated" style="visibility: visible;">
+        <div class="row1 center">
+          <p id="number1" class="number">add a new movie</p>
+          <span id="seprate"></span>
+        </div>
+        <div class="container row2 center">
+          <input type="text" name="name" id="name" #name placeholder="name" autocomplete="off">
+          <input type="text" name="director" id="director" #director placeholder="director" autocomplete="off">
+          <input type="url" name="url" id="url" #url placeholder="url" autocomplete="off">
+        </div>
+        <div class="row3 center">
+          <div class="plus" (click)="add(name.value,director.value,url.value)">add</div>
+        </div>
       </div>
-      <div class="item wow fadeInUpBig animated animated" data-number="12" style="visibility: visible;"
-        *ngFor="let item of movies$ | async;">
-        <i class="fa fa-briefcase"></i>
-        <p id="number1" class="number">{{item.name}}</p>
-        <span></span>
-        <p>{{item.director}}</p>
-        <div class="plus" (click)="remove()">remove</div>
+      <div class="item wow fadeInUpBig animated animated" style="visibility: visible;"
+        *ngFor="let item of movies$ | async; let i = index;">
+        <div class="row1 center">
+          <p id="number1" class="number">{{item.name}}</p>
+          <span id="seprate"></span>
+        </div>
+        <div class="container row2 center">
+          <p>{{item.director}}</p>
+        </div>
+        <div class="row3 center">
+          <div class="plus" (click)="remove(i)">remove</div>
+        </div>
       </div>
     </div>
   </div>
