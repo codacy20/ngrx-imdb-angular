@@ -6,7 +6,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
-      ],
+      ]
     }).compileComponents();
   }));
 
@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'nrgx-practice'`, () => {
+  it(`should have as title 'ngrx-practice'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('nrgx-practice');
+    expect(app.title).toEqual('ngrx-practice');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('nrgx-practice app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('ngrx-practice app is running!');
   });
 });
