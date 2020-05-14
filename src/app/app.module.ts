@@ -13,7 +13,7 @@ import { movieReducer } from './reducers/movie.reducers';
     AppComponent
   ],
   imports: [
-    StoreModule.forRoot({ movies: movieReducer }),
+    StoreModule.forRoot({ moviess: movieReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production // Restrict extension to log-only mode

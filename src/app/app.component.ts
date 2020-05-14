@@ -12,13 +12,15 @@ import { AppState } from './app.state';
 })
 export class AppComponent {
   movies$: Observable<Movie[]>;
-
+  id: number = 3;
   constructor(private store: Store<AppState>) {
-    this.movies$ = store.select('movies');
+    this.movies$ = store.select('moviess');
   }
 
   add(name: string, director: string, url: string) {
-    this.store.dispatch(new MovieActions.AddMovie({ name, director, url }));
+    let id = this.id;
+    this.store.dispatch(new MovieActions.AddMovie({ name, director, url, id }));
+    this.id++;
   }
 
   remove(index: number) {

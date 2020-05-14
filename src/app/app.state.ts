@@ -1,5 +1,5 @@
 import { Movie } from './models/movie.model';
 
 export interface AppState {
-    readonly movies: Movie[];
+    readonly moviess: Movie[];
 }

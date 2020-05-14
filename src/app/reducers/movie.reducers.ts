@@ -6,12 +6,14 @@ const initialState: Movie[] = [
     {
         name: 'Pulp Fiction',
         url: '',
-        director: 'Quentin Tarantino'
+        director: 'Quentin Tarantino',
+        id: 1
     },
     {
         name: 'Zodiac',
         director: 'David Fincher',
-        url: ''
+        url: '',
+        id: 2
     }
 ];
 
@@ -22,7 +24,7 @@ export function movieReducer(state: Movie[] = initialState, action: MovieActions
             return [...state, action.payload];
         case MovieActions.REMOVE_MOVIE:
             return state.filter((item) => {
-                if (item.name !== state[action.payload].name) {
+                if (item.id !== state[action.payload].id) {
                     return item;
                 }
             });
